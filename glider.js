@@ -608,3 +608,78 @@
 
   return Glider
 })
+
+document.addEventListener('DOMContentLoaded', function () {
+  const gliderContainer = document.querySelector('.glider-contain');
+  const glider = document.querySelector('.glider');
+
+  // Inicializa o Glider.js
+  const gliderInstance = new Glider(glider, {
+    slidesToShow: 5,
+    slidesToScroll: 5,
+    itemWidth: 100,
+    draggable: true,
+    scrollLock: false,
+    dots: false,
+    rewind: true,
+    arrows: {
+      prev: '.glider-prev',
+      next: '.glider-next',
+    },
+    responsive: [
+      {
+        breakpoint: 800,
+        settings: {
+          slidesToScroll: 'auto',
+          itemWidth: 230,
+          slidesToShow: 'auto',
+          exactWidth: true,
+        },
+      },
+      {
+        breakpoint: 700,
+        settings: {
+          slidesToScroll: 'auto',
+          itemWidth: 230,
+          slidesToShow: 'auto',
+          exactWidth: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToScroll: 3,
+          slidesToShow: 3,
+          slidesToScroll: 'auto',
+          itemWidth: 230,
+          slidesToShow: 'auto',
+          exactWidth: true,
+        },
+      },
+      {
+        breakpoint: 500,
+        settings: {
+          slidesToScroll: 2,
+          slidesToShow: 2,
+          slidesToScroll: 'auto',
+          itemWidth: 230,
+          slidesToShow: 'auto',
+          exactWidth: true,
+        },
+      },
+    ],
+  });
+
+  // Verifica a posição do carrossel após cada rolagem
+  glider.addEventListener('glider-slide-visible', function (event) {
+    const { slide, slidesToShow } = event.detail;
+
+    // Remove o degradê se o último slide for exibido integralmente
+    if (slide + slidesToShow >= glider.children.length) {
+      gliderContainer.classList.add('no-gradient');
+    } else {
+      gliderContainer.classList.remove('no-gradient');
+    }
+  });
+});
+
