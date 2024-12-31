@@ -607,4 +607,4 @@
   }
 
   return Glider
-})
+}
