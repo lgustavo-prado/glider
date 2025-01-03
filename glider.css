@@ -1,4 +1,4 @@
-
+/* CSS para glider */
 .glider {
   margin: 0 auto;
   position: relative;
@@ -7,6 +7,7 @@
   -ms-overflow-style: none;
   transform: translateZ(0);
 }
+
 .glider-track {
   transform: translateZ(0);
   width: 100%;
@@ -15,27 +16,27 @@
   display: flex;
   z-index: 1;
 }
+
 .glider.draggable {
   user-select: none;
   cursor: -webkit-grab;
   cursor: grab;
 }
+
 .glider.draggable img {
   user-select: none;
   pointer-events: none;
 }
+
 .glider.drag {
   cursor: -webkit-grabbing;
   cursor: grabbing;
 }
 
-
 .glider::-webkit-scrollbar {
   opacity: 0;
   height: 0;
 }
-
-
 
 .glider-next.disabled, .glider-prev.disabled {
   opacity: 0.25;
@@ -46,6 +47,7 @@
 .glider-hide {
   opacity: 0;
 }
+
 .glider-dots {
   user-select: none;
   display: flex;
@@ -54,6 +56,7 @@
   margin: 0 auto;
   padding: 0;
 }
+
 .glider-dot {
   border: 0;
   padding: 0;
@@ -68,40 +71,31 @@
   height: 12px;
   margin: 7px;
 }
+
 .glider-dot:hover,
 .glider-dot:focus,
 .glider-dot.active {
   background: #a89cc8;
 }
-@media (max-width: 36em) {
-  .glider::-webkit-scrollbar {
-    opacity: 1;
-    -webkit-appearance: none;
-    width: 7px;
-    height: 3px;
-  }
-  .glider::-webkit-scrollbar-thumb {
-    opacity: 1;
-    border-radius: 99px;
-    background-color: rgba(156, 156, 156, 0.25);
-    box-shadow: 0 0 1px rgba(255, 255, 255, 0.25);
-  }
-  * Mídia Query para dispositivos móveis */
-@media (max-width: 36em) {
-  .glider-slide {
-    width: 100px; /* Define a largura para 100px */
-    height: 200px; /* Define a altura para 200px */
-  }
 
+/* Ajuste para dispositivos móveis */
+@media (max-width: 36em) {
   .glider {
     display: flex;
-    justify-content: center; /* Garante que os itens fiquem centralizados */
+    justify-content: center;
   }
 
-  /* Limitar a exibição a 2 itens por vez */
   .glider-track {
     display: flex;
-    justify-content: space-between; /* Adiciona espaço entre os itens */
+    justify-content: space-between; /* Espaço entre os itens */
+    width: 200%; /* Garante que dois itens ocupem toda a largura */
+  }
+
+  .glider-slide {
+    width: 100px;  /* Largura dos itens */
+    height: 200px; /* Altura dos itens */
+    flex: 0 0 auto; /* Impede que os itens se estiquem */
+    margin-right: 10px; /* Espaço entre os itens */
   }
 
   .glider-prev, .glider-next {
@@ -111,31 +105,7 @@
   }
 }
 
-
-
-/*SEGUNDO CSS*/
-
-
-
-* {
-  box-sizing: border-box;
-}
-
-html, body {
-  width: 100%;
-  overflow: hidden;
-}
-
-.glider-contain {
-  width: 98%;
-  max-width: 997px;
-  margin: 0 auto;
-  position: relative;
-  overflow: hidden;
-  padding-left: 30px;
-  padding-right: 30px;
-}
-
+/* Outros estilos */
 .glider-slide {
   user-select: none;
   align-content: center;
@@ -171,95 +141,6 @@ html, body {
   position: relative;
 }
 
-.glider-slide .slide-title {
-  font-family: Arial, sans-serif;
-  font-size: 14px;
-  color: #fff;
-  text-align: center;
-  font-weight: bold;
-  margin-left: 10px;
-  margin-top: 0px;
-  margin-right: 10px;
-  position: relative;
-  background-color: transparent;
-  letter-spacing: 0.08em;
-  line-height: 1.5;
-}
-
-.glider-slide .icons-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 80%;
-  margin-top: 10px;
-}
-
-.glider-slide .icons-container img {
-  width: 18px;
-  height: 15px;
-  object-fit: cover;
-  margin: 0 5px;
-}
-
-.glider-slide .footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  margin-top: auto;
-  padding: 10px 0;
-  background-color: transparent;
-  text-align: center;
-}
-
-.footer .left-column {
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-}
-
-.footer .right-column {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.footer .left-column span {
-  font-family: Arial, sans-serif;
-  font-size: 8px;
-  color: #fff;
-  text-align: left;
-  margin-bottom: -5px;
-  margin-left: 8px;
-}
-
-.footer .left-column img {
-  width: 100px;
-  height: 11px;
-  object-fit: cover;
-  margin-left: 5px;
-}
-
-.footer .right-column button {
-  width: 110px;
-  height: 30px;
-  font-size: 14px;
-  font-weight: bold;
-  font-family: Arial, sans-serif;
-  background-color: #8943D0;
-  color: white;
-  border: 1px solid #A56CE0;
-  border-radius: 3px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  position: relative;
-  right: 5px;
-  margin-bottom: 5px;
-}
-
-.footer .right-column button:hover {
-  background-color: #8F6CB7;
-}
-
 .glider-prev, .glider-next {
   font-size: 50px;
   background-color: #A56CE0;
@@ -286,7 +167,7 @@ html, body {
   right: 10px;
 }
 
-.glider-prev:hover, .glider-next:hover, .glider-prev:focus, .glider-next:focus{
+.glider-prev:hover, .glider-next:hover, .glider-prev:focus, .glider-next:focus {
   background-color: #8F6CB7;
 }
 
