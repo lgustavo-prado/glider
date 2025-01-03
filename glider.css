@@ -79,7 +79,7 @@
 }
 
 /* Ajuste para dispositivos móveis */
-@media (max-width: 36em) {
+@media (max-width: 480px) {
   .glider {
     display: flex;
     justify-content: center;
@@ -88,20 +88,50 @@
   .glider-track {
     display: flex;
     justify-content: space-between; /* Espaço entre os itens */
-    width: 200%; /* Garante que dois itens ocupem toda a largura */
+    width: 70%; /* 35% por item (exibindo 2 ao mesmo tempo) */
   }
 
   .glider-slide {
-    width: 100px;  /* Largura dos itens */
-    height: 200px; /* Altura dos itens */
+    width: 35%; /* Tamanho dos itens no celular */
+    height: 100px; /* Altura dos itens */
     flex: 0 0 auto; /* Impede que os itens se estiquem */
-    margin-right: 10px; /* Espaço entre os itens */
+    margin-right: 10px; /* Pequeno espaço entre os itens */
+    background-color: rgba(84, 83, 83, 0.5);
+    border: 1px solid black;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 
+      1px 1px 1px rgba(0, 0, 0, 0.1),
+      1px 1px 1px rgba(0, 0, 0, 0.7);
+    background-size: 100% 45%;
+    background-position: top center;
+    background-repeat: no-repeat;
   }
 
   .glider-prev, .glider-next {
-    width: 40px;
-    height: 40px;
-    font-size: 30px;
+    display: none; /* Oculta as setas no celular */
+  }
+
+  .glider-slide img {
+    width: 30%; /* Tamanho reduzido da imagem principal */
+    height: auto;
+    object-fit: cover;
+    margin-top: 10px;
+    margin-bottom: 10px; 
+  }
+
+  .footer .left-column span {
+    font-size: 8px; /* Texto "Oferecido por" em tamanho reduzido */
+  }
+
+  .footer .left-column img {
+    width: 50%; /* Imagem "Oferecido por" com 50% do tamanho original */
+    height: auto;
+  }
+
+  .footer .right-column button {
+    font-size: 10px; /* Reduz o tamanho do botão */
+    padding: 5px 10px;
   }
 }
 
@@ -127,18 +157,6 @@
   background-size: 100% 45%;
   background-position: top center;
   background-repeat: no-repeat;
-}
-
-.glider-slide img {
-  user-select: none;
-  pointer-events: none;
-  max-width: 100%;
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  margin-top: 10px;
-  margin-bottom: 10px; 
-  position: relative;
 }
 
 .glider-prev, .glider-next {
