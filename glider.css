@@ -86,6 +86,29 @@
     background-color: rgba(156, 156, 156, 0.25);
     box-shadow: 0 0 1px rgba(255, 255, 255, 0.25);
   }
+  * Mídia Query para dispositivos móveis */
+@media (max-width: 36em) {
+  .glider-slide {
+    width: 100px; /* Define a largura para 100px */
+    height: 200px; /* Define a altura para 200px */
+  }
+
+  .glider {
+    display: flex;
+    justify-content: center; /* Garante que os itens fiquem centralizados */
+  }
+
+  /* Limitar a exibição a 2 itens por vez */
+  .glider-track {
+    display: flex;
+    justify-content: space-between; /* Adiciona espaço entre os itens */
+  }
+
+  .glider-prev, .glider-next {
+    width: 40px;
+    height: 40px;
+    font-size: 30px;
+  }
 }
 
 
