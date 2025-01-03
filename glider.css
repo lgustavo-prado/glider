@@ -79,7 +79,7 @@
 }
 
 /* Ajuste para dispositivos móveis */
-@media (max-width: 480px) {
+@media (max-width: 880px) {
   .glider {
     display: flex;
     justify-content: center;
