@@ -83,17 +83,18 @@
   .glider {
     display: flex;
     justify-content: center;
+    width: 100%;
   }
 
   .glider-track {
     display: flex;
     justify-content: flex-start; /* Garantir que os itens fiquem alinhados ao início */
-    width: 100%; /* Garantir que a pista ocupe a largura total */
     flex-wrap: nowrap; /* Garantir que os itens não se quebrem para a linha seguinte */
+    width: 100%; /* Garantir que a pista ocupe a largura total */
   }
 
   .glider-slide {
-    width: 45%; /* Ajuste a largura dos itens para que fiquem lado a lado */
+    width: 45%; /* Largura ajustada dos itens para dois ao lado no celular */
     height: 100px;
     margin-right: 10px;
     flex-shrink: 0; /* Impede que os itens encolham */
@@ -109,16 +110,17 @@
     background-repeat: no-repeat;
   }
 
+  /* Garantir que a navegação por setas seja escondida no celular */
   .glider-prev, .glider-next {
-    display: none; /* Oculta as setas no celular */
+    display: none;
   }
 
   .glider-slide img {
-    width: 30%; /* Tamanho reduzido da imagem principal */
+    width: 100%; /* Ajusta a imagem para ocupar a largura do item */
     height: auto;
     object-fit: cover;
     margin-top: 10px;
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
   }
 
   .footer .left-column span {
