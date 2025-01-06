@@ -75,8 +75,6 @@
 }
 
 
-
-
 /*SEGUNDO CSS*/
 
 
@@ -261,3 +259,329 @@ html, body {
   display: block;
   margin: 0;
 }
+
+
+
+
+
+/*PARA CELULAR*/
+
+
+
+
+@media (max-width: 600) {
+  /* Customização do scrollbar para telas menores */
+  .glider::-webkit-scrollbar {
+    opacity: 1; /* Tornar visível o scrollbar */
+    -webkit-appearance: none;
+    width: 7px; /* Largura do scrollbar */
+    height: 3px; /* Altura do scrollbar */
+  }
+
+  /* Customização do polegar do scrollbar */
+  .glider::-webkit-scrollbar-thumb {
+    opacity: 1;
+    border-radius: 99px; /* Bordas arredondadas */
+    background-color: rgba(156, 156, 156, 0.25); /* Cor de fundo */
+    box-shadow: 0 0 1px rgba(255, 255, 255, 0.25); /* Sombras para o efeito */
+  }
+
+  /* Estilos para o contêiner do glider */
+  .glider {
+    margin: 0 auto;
+    position: relative;
+    overflow-y: hidden; /* Oculta o overflow vertical */
+    -webkit-overflow-scrolling: touch; /* Melhora o desempenho de rolagem no iOS */
+    -ms-overflow-style: none;
+    transform: translateZ(0); /* Otimização de desempenho */
+  }
+
+  /* Estilo do contêiner das slides */
+  .glider-track {
+    transform: translateZ(0); /* Garantir que o glider funcione suavemente */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Itens ficam alinhados em linha */
+    z-index: 1;
+  }
+
+  /* Definições de interatividade para arrastar (draggable) */
+  .glider.draggable {
+    user-select: none; /* Impede a seleção do conteúdo */
+    cursor: -webkit-grab; /* Cursor de arrasto */
+    cursor: grab; /* Cursor de arrasto */
+  }
+
+  .glider.draggable img {
+    user-select: none;
+    pointer-events: none; /* Impede interação com a imagem */
+  }
+
+  /* Estilos enquanto está sendo arrastado */
+  .glider.drag {
+    cursor: -webkit-grabbing; /* Cursor de arrasto */
+    cursor: grabbing; /* Cursor de arrasto */
+  }
+
+  /* Ocultar o scrollbar */
+  .glider::-webkit-scrollbar {
+    opacity: 0;
+    height: 0;
+  }
+
+  /* Desabilita a navegação quando os botões estiverem inativos */
+  .glider-next.disabled, .glider-prev.disabled {
+    opacity: 0.25;
+    color: #666;
+    cursor: default;
+  }
+
+  /* Esconde itens */
+  .glider-hide {
+    opacity: 0;
+  }
+
+  /* Estilo para os pontos de navegação */
+  .glider-dots {
+    user-select: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Alinha ao centro */
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  /* Estilos para cada ponto de navegação */
+  .glider-dot {
+    border: 0;
+    padding: 0;
+    user-select: none;
+    outline: none;
+    display: block;
+    cursor: pointer;
+    color: #ccc;
+    border-radius: 999px; /* Faz os pontos ficarem redondos */
+    background: #ccc;
+    width: 12px;
+    height: 12px;
+    margin: 7px;
+  }
+
+  /* Estilos para pontos quando estão selecionados ou em foco */
+  .glider-dot:hover,
+  .glider-dot:focus,
+  .glider-dot.active {
+    background: #a89cc8;
+  }
+
+  /*SEGUNDO CSS*/
+
+  /* Reset de box-sizing para garantir que o padding e as bordas não afetem o layout */
+  * {
+    box-sizing: border-box;
+  }
+
+  /* Evita que o conteúdo transborde */
+  html, body {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  /* Estilo do contêiner do glider */
+  .glider-contain {
+    width: 98%;
+    max-width: 997px;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+/* Estilo para cada slide */
+.glider-slide {
+  user-select: none; /* Impede a seleção de texto ou elementos dentro do slide */
+  align-content: center; /* Alinha o conteúdo dentro do contêiner centralizado */
+  display: flex; /* Define o layout como flexível, permitindo um controle mais fácil do posicionamento */
+  flex-direction: column; /* Organiza os itens do slide em uma coluna */
+  align-items: center; /* Alinha os itens do slide ao centro do eixo transversal (horizontalmente) */
+  justify-content: space-between; /* Distribui o espaço entre os itens de forma igual, deixando o primeiro no topo e o último na parte inferior */
+  min-height: 250px; /* Define uma altura mínima de 250px para o slide */
+  max-height: 250px;
+  width: 100%; /* A largura do slide ocupa 100% do espaço disponível */
+  background-color: rgba(84, 83, 83, 0.5); /* Define um fundo com cor semitransparente */
+  border: 1px solid black; /* Adiciona uma borda preta de 1px ao redor do slide */
+  border-radius: 10px; /* Arredonda os cantos do slide com um raio de 10px */
+  margin-right: 5px; /* Adiciona uma margem à direita do slide */
+  box-sizing: border-box; /* Faz com que o padding e a borda sejam incluídos no cálculo da largura e altura */
+  position: relative; /* Define o slide como um elemento posicionado de forma relativa para que elementos internos possam ser posicionados em relação a ele */
+  box-shadow: 
+    1px 1px 1px rgba(0, 0, 0, 0.1), /* Adiciona uma sombra leve (escura e suave) ao redor do slide */
+    1px 1px 1px rgba(0, 0, 0, 0.7); /* Adiciona uma sombra mais forte e escura ao redor do slide para dar profundidade */
+  background-size: 100% 45%; /* Ajusta o tamanho do fundo para cobrir 100% da largura e 45% da altura do slide */
+  background-position: top center; /* Posiciona o fundo no topo e centralizado horizontalmente */
+  background-repeat: no-repeat; /* Evita que o fundo seja repetido */
+}
+
+
+  /* Estilo da imagem dentro do slide */
+  .glider-slide img {
+    user-select: none;
+    pointer-events: none;
+    max-width: 100%;
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    margin-top: 10px;
+    margin-bottom: 10px; 
+    position: relative;
+  }
+
+  /* Estilo do título do slide */
+  .glider-slide .slide-title {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    margin-left: 10px;
+    margin-top: 0px;
+    margin-right: 10px;
+    position: relative;
+    background-color: transparent;
+    letter-spacing: 0.08em;
+    line-height: 1.5;
+  }
+
+  /* Estilo do container de ícones */
+  .glider-slide .icons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin-top: 10px;
+  }
+
+  /* Estilo das imagens dentro do container de ícones */
+  .glider-slide .icons-container img {
+    width: 18px;
+    height: 15px;
+    object-fit: cover;
+    margin: 0 5px;
+  }
+
+  /* Estilo do rodapé do slide */
+  .glider-slide .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: auto;
+    padding: 10px 0;
+    background-color: transparent;
+    text-align: center;
+  }
+
+  /* Estilo da coluna da esquerda no rodapé */
+  .footer .left-column {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+  }
+
+  /* Estilo da coluna da direita no rodapé */
+  .footer .right-column {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  /* Estilo do texto na coluna da esquerda */
+  .footer .left-column span {
+    font-family: Arial, sans-serif;
+    font-size: 8px;
+    color: #fff;
+    text-align: left;
+    margin-bottom: -5px;
+    margin-left: 8px;
+  }
+
+  /* Estilo da imagem na coluna da esquerda */
+  .footer .left-column img {
+    width: 100px;
+    height: 11px;
+    object-fit: cover;
+    margin-left: 5px;
+  }
+
+  /* Estilo do botão na coluna da direita */
+  .footer .right-column button {
+    width: 110px;
+    height: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    background-color: #8943D0;
+    color: white;
+    border: 1px solid #A56CE0;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: relative;
+    right: 5px;
+    margin-bottom: 5px;
+  }
+
+  /* Estilo do botão ao passar o mouse sobre ele */
+  .footer .right-column button:hover {
+    background-color: #8F6CB7;
+  }
+
+  /* Estilo dos botões de navegação */
+  .glider-prev, .glider-next {
+    font-size: 50px;
+    background-color: #A56CE0;
+    color: #fff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background-color 0.3s ease;
+  }
+
+  /* Estilo da seta anterior */
+  .glider-prev {
+    left: 10px;
+  }
+
+  /* Estilo da seta seguinte */
+  .glider-next {
+    right: 10px;
+  }
+
+  /* Efeito ao passar o mouse nas setas */
+  .glider-prev:hover, .glider-next:hover, .glider-prev:focus, .glider-next:focus{
+    background-color: #8F6CB7;
+  }
+
+  /* Estilo das imagens nas setas */
+  .glider-prev img, .glider-next img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    display: block;
+    margin: 0;
+  }
+}
+
+
+
+
+
