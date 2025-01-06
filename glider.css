@@ -1,4 +1,4 @@
-/* CSS para glider */
+
 .glider {
   margin: 0 auto;
   position: relative;
@@ -7,7 +7,6 @@
   -ms-overflow-style: none;
   transform: translateZ(0);
 }
-
 .glider-track {
   transform: translateZ(0);
   width: 100%;
@@ -16,27 +15,27 @@
   display: flex;
   z-index: 1;
 }
-
 .glider.draggable {
   user-select: none;
   cursor: -webkit-grab;
   cursor: grab;
 }
-
 .glider.draggable img {
   user-select: none;
   pointer-events: none;
 }
-
 .glider.drag {
   cursor: -webkit-grabbing;
   cursor: grabbing;
 }
 
+
 .glider::-webkit-scrollbar {
   opacity: 0;
   height: 0;
 }
+
+
 
 .glider-next.disabled, .glider-prev.disabled {
   opacity: 0.25;
@@ -47,7 +46,6 @@
 .glider-hide {
   opacity: 0;
 }
-
 .glider-dots {
   user-select: none;
   display: flex;
@@ -56,7 +54,6 @@
   margin: 0 auto;
   padding: 0;
 }
-
 .glider-dot {
   border: 0;
   padding: 0;
@@ -71,74 +68,51 @@
   height: 12px;
   margin: 7px;
 }
-
 .glider-dot:hover,
 .glider-dot:focus,
 .glider-dot.active {
   background: #a89cc8;
 }
-
-/* Ajuste para dispositivos móveis */
-@media (max-width: 880px) {
-  .glider {
-    display: flex;
-    justify-content: center;
-    width: 100%;
+@media (max-width: 36em) {
+  .glider::-webkit-scrollbar {
+    opacity: 1;
+    -webkit-appearance: none;
+    width: 7px;
+    height: 3px;
   }
-
-  .glider-track {
-    display: flex;
-    justify-content: flex-start; /* Garantir que os itens fiquem alinhados ao início */
-    flex-wrap: nowrap; /* Garantir que os itens não se quebrem para a linha seguinte */
-    width: 100%; /* Garantir que a pista ocupe a largura total */
-  }
-
-  .glider-slide {
-    width: 45%; /* Largura ajustada dos itens para dois ao lado no celular */
-    height: 100px;
-    margin-right: 10px;
-    flex-shrink: 0; /* Impede que os itens encolham */
-    background-color: rgba(84, 83, 83, 0.5);
-    border: 1px solid black;
-    border-radius: 10px;
-    position: relative;
-    box-shadow: 
-      1px 1px 1px rgba(0, 0, 0, 0.1),
-      1px 1px 1px rgba(0, 0, 0, 0.7);
-    background-size: 100% 45%;
-    background-position: top center;
-    background-repeat: no-repeat;
-  }
-
-  /* Garantir que a navegação por setas seja escondida no celular */
-  .glider-prev, .glider-next {
-    display: none;
-  }
-
-  .glider-slide img {
-    width: 100%; /* Ajusta a imagem para ocupar a largura do item */
-    height: auto;
-    object-fit: cover;
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-
-  .footer .left-column span {
-    font-size: 8px; /* Texto "Oferecido por" em tamanho reduzido */
-  }
-
-  .footer .left-column img {
-    width: 50%; /* Imagem "Oferecido por" com 50% do tamanho original */
-    height: auto;
-  }
-
-  .footer .right-column button {
-    font-size: 10px; /* Reduz o tamanho do botão */
-    padding: 5px 10px;
+  .glider::-webkit-scrollbar-thumb {
+    opacity: 1;
+    border-radius: 99px;
+    background-color: rgba(156, 156, 156, 0.25);
+    box-shadow: 0 0 1px rgba(255, 255, 255, 0.25);
   }
 }
 
-/* Outros estilos */
+
+
+/*SEGUNDO CSS*/
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  overflow: hidden;
+}
+
+.glider-contain {
+  width: 98%;
+  max-width: 997px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
 .glider-slide {
   user-select: none;
   align-content: center;
@@ -160,6 +134,107 @@
   background-size: 100% 45%;
   background-position: top center;
   background-repeat: no-repeat;
+}
+
+.glider-slide img {
+  user-select: none;
+  pointer-events: none;
+  max-width: 100%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-top: 10px;
+  margin-bottom: 10px; 
+  position: relative;
+}
+
+.glider-slide .slide-title {
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+  margin-left: 10px;
+  margin-top: 0px;
+  margin-right: 10px;
+  position: relative;
+  background-color: transparent;
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+}
+
+.glider-slide .icons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin-top: 10px;
+}
+
+.glider-slide .icons-container img {
+  width: 18px;
+  height: 15px;
+  object-fit: cover;
+  margin: 0 5px;
+}
+
+.glider-slide .footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: auto;
+  padding: 10px 0;
+  background-color: transparent;
+  text-align: center;
+}
+
+.footer .left-column {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.footer .right-column {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.footer .left-column span {
+  font-family: Arial, sans-serif;
+  font-size: 8px;
+  color: #fff;
+  text-align: left;
+  margin-bottom: -5px;
+  margin-left: 8px;
+}
+
+.footer .left-column img {
+  width: 100px;
+  height: 11px;
+  object-fit: cover;
+  margin-left: 5px;
+}
+
+.footer .right-column button {
+  width: 110px;
+  height: 30px;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  background-color: #8943D0;
+  color: white;
+  border: 1px solid #A56CE0;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: relative;
+  right: 5px;
+  margin-bottom: 5px;
+}
+
+.footer .right-column button:hover {
+  background-color: #8F6CB7;
 }
 
 .glider-prev, .glider-next {
@@ -188,7 +263,7 @@
   right: 10px;
 }
 
-.glider-prev:hover, .glider-next:hover, .glider-prev:focus, .glider-next:focus {
+.glider-prev:hover, .glider-next:hover, .glider-prev:focus, .glider-next:focus{
   background-color: #8F6CB7;
 }
 
