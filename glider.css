@@ -87,15 +87,16 @@
 
   .glider-track {
     display: flex;
-    justify-content: space-between; /* Espaço entre os itens */
-    width: 70%; /* 35% por item (exibindo 2 ao mesmo tempo) */
+    justify-content: flex-start; /* Garantir que os itens fiquem alinhados ao início */
+    width: 100%; /* Garantir que a pista ocupe a largura total */
+    flex-wrap: nowrap; /* Garantir que os itens não se quebrem para a linha seguinte */
   }
 
   .glider-slide {
-    width: 35%; /* Tamanho dos itens no celular */
-    height: 100px; /* Altura dos itens */
-    flex: 0 0 auto; /* Impede que os itens se estiquem */
-    margin-right: 10px; /* Pequeno espaço entre os itens */
+    width: 45%; /* Ajuste a largura dos itens para que fiquem lado a lado */
+    height: 100px;
+    margin-right: 10px;
+    flex-shrink: 0; /* Impede que os itens encolham */
     background-color: rgba(84, 83, 83, 0.5);
     border: 1px solid black;
     border-radius: 10px;
